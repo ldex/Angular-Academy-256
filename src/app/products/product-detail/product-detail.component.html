@@ -1,4 +1,8 @@
-<div *ngIf="product">
+<ng-template #noproduct>
+    <h2>Loading</h2>
+</ng-template>
+
+<div *ngIf="product;else noproduct">
     <h2>{{product.name | uppercase}}</h2>
     <img style="float:right"
         [src]="product.imageUrl"
